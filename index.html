@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Job Success AI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fc;color:#17233d}
+header{background:#10264b;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+header h2{margin:0;color:#70d6b2}
+header a{color:white;text-decoration:none}
+.hero{text-align:center;padding:65px 18px;background:#e5efff}
+.hero h1{font-size:36px;max-width:750px;margin:10px auto}
+.hero p{font-size:17px;line-height:1.6}
+button{background:#087e69;color:white;border:0;padding:13px 20px;border-radius:7px;font-size:15px;cursor:pointer}
+main{max-width:950px;margin:35px auto;padding:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:12px;box-shadow:0 3px 15px #00000010}
+.card h3{color:#087e69}
+input,textarea{width:100%;padding:13px;margin:8px 0 16px;border:1px solid #ccd4df;border-radius:7px;font-size:15px}
+textarea{min-height:90px}
+#result{white-space:pre-wrap;background:#e8f5ef;padding:15px;border-radius:8px;margin-top:15px}
+footer{text-align:center;padding:25px;color:#65738b}
+</style>
+</head>
+<body>
+
+<header>
+<h2>Global Job Success AI</h2>
+<a href="#tools">Our Tools</a>
+</header>
+
+<section class="hero">
+<h1>Find Your Dream Job With AI</h1>
+<p>Create a professional CV, write a cover letter and prepare for your next job interview.</p>
+<button onclick="document.getElementById('tools').scrollIntoView()">Get Started</button>
+</section>
+
+<main id="tools">
+<h2>Our Career Tools</h2>
+
+<div class="grid">
+<div class="card">
+<h3>📄 CV Builder</h3>
+<p>Create a professional CV for your next job application.</p>
+</div>
+<div class="card">
+<h3>✉️ Cover Letter</h3>
+<p>Prepare a personalized cover letter.</p>
+</div>
+<div class="card">
+<h3>🎯 Interview Preparation</h3>
+<p>Practice answering common interview questions.</p>
+</div>
+</div>
+
+<section class="card" style="margin-top:25px">
+<h2>Career Assistant</h2>
+<p>Enter your information to get started.</p>
+
+<label>Your name</label>
+<input id="name" placeholder="Enter your full name">
+
+<label>Your profession</label>
+<input id="job" placeholder="Example: Hotel receptionist">
+
+<label>Your experience and skills</label>
+<textarea id="skills" placeholder="Describe your experience and skills"></textarea>
+
+<button onclick="generate()">Generate my career profile</button>
+
+<div id="result"></div>
+</section>
+</main>
+
+<footer>
+<p>© 2026 Global Job Success AI. All rights reserved.</p>
+</footer>
+
+<script>
+function generate(){
+const name=document.getElementById('name').value;
+const job=document.getElementById('job').value;
+const skills=document.getElementById('skills').value;
+
+if(!name || !job || !skills){
+alert("Please complete all fields.");
+return;
+}
+
+document.getElementById('result').textContent=
+"YOUR CAREER PROFILE\n\n"+
+"Name: "+name+"\n"+
+"Profession: "+job+"\n"+
+"Experience and skills: "+skills+
+"\n\nProfessional summary:\n"+
+name+" is a motivated professional interested in opportunities as a "+job+
+". Key skills and experience include: "+skills+
+". This profile is a starting draft. Improve it before applying.";
+}
+</script>
+
+</body>
+</html>
